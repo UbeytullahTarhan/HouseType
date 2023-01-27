@@ -95,7 +95,7 @@ public class BaseRepository  {
 
 
     public List<BaseModel> filterByRoomAndLivingRoom(int room, int livingRoom) {
-        return houses.stream().filter(x -> x.getNumberOfRooms()==room && x.getNumberOfLivingRooms() ==  livingRoom).collect(Collectors.toList());
+        return houses.stream().filter(x -> (int)x.getNumberOfRooms()==room && (int)x.getNumberOfLivingRooms() ==  livingRoom).toList();
     }
 
 

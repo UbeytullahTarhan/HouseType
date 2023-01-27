@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Total Average Square Meter Of All : "+ service.getTotalAvgSquareMeters());
         System.out.println("*********************Average Square Meter End****************************");
         System.out.println("*********************Filtered Houses****************************");
-        printFilteredHouses(1,1,houses);
+        printFilteredHouses(1,1,service);
 
         System.out.println("*********************Filtered Houses End****************************");
 
@@ -46,9 +46,9 @@ public class Main {
 
 
     }
-   static void printFilteredHouses(int room,int livingRoom,List<BaseModel> houses){
+   static void printFilteredHouses(int room,int livingRoom,BaseService service){
 
-        for(BaseModel house:houses){
+        for(BaseModel house:service.filterByRoomAndLivingRoom(room,livingRoom)){
             System.out.println(house.getHouseName()+" Price: "+house.getPrice()+" Square Meters: "+house.getArea());
 
         }
